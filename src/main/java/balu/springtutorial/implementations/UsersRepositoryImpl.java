@@ -5,14 +5,16 @@ import balu.springtutorial.api.UsersRepository;
 import balu.springtutorial.domain.User;
 
 public class UsersRepositoryImpl implements UsersRepository {
-private Logger logger;
-	public User createUser(String name) {
-		logger.log("Tworzenie uzytkownika: " +name);
-		return new User(name);
+	private Logger logger;
+
+	public UsersRepositoryImpl(Logger logger, String localization, String dbName) {
+		this.logger = logger;
+		logger.log("Lokalizacja repozytorium " + localization +"/" + dbName);
 	}
 
-	public void setLogger(Logger logger) {
-		this.logger = logger;
+	public User createUser(String name) {
+		logger.log("Tworzenie uzytkownika" + name);
+		return new User(name);
 	}
 
 }

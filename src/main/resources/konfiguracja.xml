@@ -3,12 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="mojLogger" class="balu.springtutorial.implementations.LoggerImpl">
-		<property name="name" value="Mój logger"></property>
-		<property name="version" value="3"></property>
-	</bean>
-
-	<bean id="repozytoriumUzytkownikow" class="balu.springtutorial.implementations.UsersRepositoryImpl">
-		<property name="logger" ref="mojLogger"></property>
+	<bean id="someBean" class="balu.springtutorial.implementations.SomeBean">
+		<constructor-arg type="java.lang.String" value="50"></constructor-arg>
+		<constructor-arg value="100"></constructor-arg>
 	</bean>
 </beans>
